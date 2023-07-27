@@ -11,7 +11,7 @@
     <div id="main-grid-layout">
        <header id="dashboard-header">
             <div class="search-container">
-                <div id="search-icon"></div>
+                <img src="./icons/search.png" alt="A search icon" id="search-icon">
                 <input type="text" id="searchbar">
             </div>
             <div class="notifications-container">
@@ -25,29 +25,32 @@
                 <div id="large-username">Sammy D (@sammy)</div>
             </div>
             <div class="header-buttons">
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button>
+                <button type="button">New</button>
+                <button type="button">Upload</button>
+                <button type="button">Share</button>
             </div>
        </header>
        <div id="sidebar">
-           <h2 id="dashboard-title">Dashboard</h2>
+           <div id="sidebar-title-container">
+                <img id="dashboard-icon" src="./icons/dashboard.png" alt="">
+                <h2 id="sidebar-title">Dashboard</h2>
+           </div>
            <ul id="user-links">
-            <li><img src="" alt=""><a href="#">Home</a></li>
-            <li><img src="" alt=""><a href="#">Profile</a></li>
-            <li><img src="" alt=""><a href="#">Messages</a></li>
-            <li><img src="" alt=""><a href="#">History</a></li>
-            <li><img src="" alt=""><a href="#">Tasks</a></li>
-            <li><img src="" alt=""><a href="#">Communities</a></li>
+            <li><img class="sidebar-icon" src="./icons/home.png" alt=""><a href="#">Home</a></li>
+            <li><img class="sidebar-icon" src="./icons/home.png" alt=""><a href="#">Profile</a></li>
+            <li><img class="sidebar-icon" src="./icons/messages.png" alt=""><a href="#">Messages</a></li>
+            <li><img class="sidebar-icon" src="./icons/history.png" alt=""><a href="#">History</a></li>
+            <li><img class="sidebar-icon" src="./icons/tasks.png" alt=""><a href="#">Tasks</a></li>
+            <li><img class="sidebar-icon" src="./icons/communities.png" alt=""><a href="#">Communities</a></li>
            </ul>
            <ul id="technical-links">
-            <li><img src="" alt=""><a href="#">Settings</a></li>
-            <li><img src="" alt=""><a href="#">Support</a></li>
-            <li><img src="" alt=""><a href="#">Privacy</a></li>
+            <li><img class="sidebar-icon" src="./icons/settings.png" alt=""><a href="#">Settings</a></li>
+            <li><img class="sidebar-icon" src="./icons/support.png" alt=""><a href="#">Support</a></li>
+            <li><img class="sidebar-icon" src="./icons/privacy.png" alt=""><a href="#">Privacy</a></li>
            </ul>
        </div>
        <div id="projects-outer-container">
-           <h3 id="projects-title">Projects</h3>
+           <h3 id="projects-title">Your Projects</h3>
            <h3 id="announcements-title">Announcements</h3>
            <div id="projects-inner-container">
                <div class="card">
@@ -109,19 +112,19 @@
                <div id="announcements-container">
                    <div class="announcement">
                        <h4 class="announcement-title">Maintenance</h4>
-                       <p class="announcement-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quas nesciunt quis, eos accusantium eligendi sint temporibus. Tenetur, sapiente. Deserunt!</p>
+                       <p class="announcement-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, eos.</p>
                    </div>
                    <div class="announcement">
                        <h4 class="announcement-title">Community Share Day</h4>
-                       <p class="announcement-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto laborum id maxime quas quasi. Nihil praesentium illum quisquam et consectetur!</p>
+                       <p class="announcement-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, dolores!</p>
                    </div>
                    <div class="announcement">
                        <h4 class="announcement-title">Updated Privacy Policy</h4>
-                       <p class="announcement-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum nihil fuga totam, accusamus omnis tenetur repudiandae. Molestias velit quidem omnis!</p>
+                       <p class="announcement-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, quisquam?</p>
                    </div>
                </div>
+               <h3 id="trending-title">Trending</h3>
                <div id="trending-container">
-                   <h3 id="trending-title">Trending</h3>
                    <img src="" alt="" class="profile-icon">
                    <h4 class="profile-name">@supercoolguy</h4>
                    <p class="profile-text">Cool is a job</p>
@@ -132,7 +135,7 @@
                    <h4 class="profile-name">@justCats</h4>
                    <p class="profile-text">Cat wrangler</p>
                    <img src="" alt="" class="profile-icon">
-                   <h4 class="profile-name">@itsame</h4>
+                   <h4 class="profile-name">@itsaMe</h4>
                    <p class="profile-text">Mario</p>
                </div>
            </div>
