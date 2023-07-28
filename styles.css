@@ -94,6 +94,16 @@ li {
     --alice-blue-shadow: hsla(206, 17%, 54%, 0.5);
     --rich-black: hsla(210, 30%, 11%, 1);
     --cinereous: hsla(21, 14%, 44%, 1);
+
+    /* Animated hamburger variables */
+    --bar-width: 20px;
+    --bar-height: 4px;
+    --hamburger-gap: 4px;
+    --hamburger-foreground: var(--alice-blue-shadow);
+    --hamburger-background: var(--alice-blue);
+    --hamburger-margin: 8px;
+    --animation-timing: 500ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
 body {
@@ -131,17 +141,20 @@ img[id$="-icon"] {
 
 #main-grid-layout {
     display: grid;
-    grid-template: 1fr 5fr / 1fr 5fr;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
     height: 100svh;
 }
 
 #dashboard-header {
+    position: relative;
     background: var(--alice-blue);
     grid-row: 1 / 2;
     grid-column: 2 / 3;
     display: grid;
     grid-template-columns: 2fr 1fr; 
     padding: 1rem;
+    padding-left: 40px;
 }
 
 .search-container {
@@ -177,6 +190,79 @@ img[id$="-icon"] {
     grid-template-rows: repeat(3, min-content);
     gap: min(24px, 3rem);
     font-size: clamp(16px, 1.4rem, 24px);
+}
+
+/* Animated Hamburger Menu */
+
+#minimize-sidebar-button,
+#minimize-sidebar {
+    position: absolute;
+    left: -5%;
+    padding: 1rem;
+    transition: filter var(--animation-timing),
+                left var(--animation-timing);
+}
+
+#minimize-sidebar {
+    top: 0.8rem;
+    filter: invert(100%);
+}
+
+#minimize-sidebar-button {
+    top: 3px;
+    height: 3.2rem;
+    width: 3.2rem;
+    z-index: 2;
+    background: transparent;
+}
+
+#hamburger-menu {
+    position: relative;
+}
+
+#hamburger-menu::before,
+#hamburger-menu::after {
+    content: "";
+    position: absolute;
+    transition: top var(--animation-timing);
+}
+
+#hamburger-menu::before {
+    top: -8px;
+}
+
+#hamburger-menu::after {
+    top: 8px;
+}
+
+#hamburger-menu::before,
+#hamburger-menu::after,
+#hamburger-menu {
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background: #000;
+    border-radius: 9999px;
+}
+
+#hamburger-menu.collapsed::before,
+#hamburger-menu.collapsed::after {
+    top: 0;
+}
+
+#sidebar {
+    opacity: 1;
+    content-visibility: visible;
+    transition: width var(--animation-timing), 
+                opacity var(--animation-timing), 
+                content-visibility var(--animation-timing);
+}
+
+#sidebar.invisible {
+    opacity: 0;
+    content-visibility: hidden;
+    overflow: hidden;
+    transition: opacity var(--animation-timing), 
+                content-visibility var(--animation-timing);
 }
 
 #sidebar-title-container {
