@@ -130,8 +130,8 @@ button {
     min-width: 8rem;
     font-weight: 700;
     scale: 1.0;
-    transition: scale 300ms ease-in-out,
-                box-shadow 300ms ease-in-out;
+    transition: scale 150ms ease-in-out,
+                box-shadow 150ms ease-in-out;
 }
 
 button:hover,
@@ -155,6 +155,7 @@ img[id$="-icon"] {
 
 #main-grid-layout:has(.invisible) {
     grid-template-columns: 0fr 1fr;
+    transition: grid-template-columns var(--animation-timing);
 }
 
 #dashboard-header {
@@ -173,7 +174,7 @@ img[id$="-icon"] {
 }
 
 .profile-container {
-    margin-left: 3rem;
+    margin-left: 0.5rem;
     margin-top: 1rem;
 }
 
@@ -222,9 +223,16 @@ img[id$="-icon"] {
     width: 3.2rem;
 }
 
+#searchbar-button.inactive {
+    height: 3rem;
+    width: 1.2rem;
+    left: -8px;
+}
+
 .header-buttons {
     display: flex;
     align-items: center;
+    gap: 1rem;
     justify-content: space-between;
     margin-right: 1rem;
 }
@@ -349,6 +357,28 @@ ul > li:not(:last-child) {
 #sidebar > ul > li {
     display: flex;
     gap: 1rem;
+}
+
+li > img {
+    scale: 1.0;
+    transition: scale 150ms ease-in;
+}
+
+li:hover > img,
+li:focus-within > img {
+    scale: 1.2;
+}
+
+li > a {
+    text-shadow: none;
+    transition: text-shadow 150ms ease-in,
+                font-size 150ms ease-in;
+}
+
+li:hover > a,
+li:focus-within > a {
+    text-shadow: 0 0 2px var(--alice-blue-shadow);
+    font-size: clamp(18px, 1.6rem, 28px);
 }
 
 #projects-outer-container {
