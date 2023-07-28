@@ -42,4 +42,8 @@ The Odin Project - Admin Dashboard
 ###### plus_star.png
 [Icon by Freepik](https://www.freepik.com/search?format=search&last_filter=query&last_value=plus+star&query=plus+star&type=icon)
 
+###### profile.png
+[Icon by Freepik](https://www.freepik.com/search?format=search&last_filter=query&last_value=profile&query=profile&sort=relevance&type=icon)
 
+###### delete.png
+[Icon by Freepik](https://www.freepik.com/search?format=search&last_filter=query&last_value=delete&query=delete&type=icon)
