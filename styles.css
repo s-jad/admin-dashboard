@@ -448,6 +448,13 @@ li:focus-within > a {
     height: 22px;
     width: 22px;
     cursor: pointer;
+    scale: 1;
+    transition: scale 150ms ease;
+}
+
+#add-project-button:hover,
+#add-project-button:focus-within {
+    scale: 1.2;
 }
 
 #projects-title-container {
@@ -490,7 +497,6 @@ li:focus-within > a {
     width: 2rem;
 }
 
-
 .card {
     box-shadow: -5px 0 0 var(--rich-black),
                 0 1px 5px var(--alice-blue-shadow); 
@@ -502,6 +508,20 @@ li:focus-within > a {
     display: flex;
     gap: 1rem;
     justify-content: end;
+}
+
+.card > .project-icons > img {
+    scale: 1;
+    transition: scale 150ms ease;
+    cursor: pointer;
+}
+.card > .project-icons > img:hover,
+.card > .project-icons > img:focus-within {
+    scale: 1.2;
+}
+
+.delete-project-button {
+    cursor: pointer;
 }
 
 .announcement {
