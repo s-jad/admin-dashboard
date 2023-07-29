@@ -92,6 +92,7 @@ li {
     --pearl: hsla(45, 41%, 90%, 0.8);
     --alice-blue: hsla(206, 47%, 94%, 1);
     --alice-blue-shadow: hsla(206, 17%, 54%, 1);
+    --alice-blue-shadow-faded: hsla(206, 17%, 54%, 0.8);
     --rich-black: hsla(210, 30%, 11%, 1);
     --cinereous: hsla(21, 14%, 44%, 1);
 
@@ -530,4 +531,79 @@ li:focus-within > a {
     font-size: clamp(22px, 1.6rem, 32px);
 }
 
+#create-project-modal {
+    position: fixed;
+    display: none;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: transparent;
+    opacity: 0;
+    z-index: 1000;
+}
 
+#create-project-modal.active {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--alice-blue-shadow-faded);
+    opacity: 1;
+}
+
+#modal-content {
+    display: grid;
+    background: var(--alice-blue);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    gap: 2rem;
+    padding: 3rem;
+    width: 70vw;
+    height: 50vh;
+    border-radius: 1rem;
+}
+
+#modal-content.fade {
+    display: none;
+}
+
+#modal-title {
+    grid-column: 1 / 7;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#modal-content > label {
+    grid-column: 1 / 3;
+    text-justify: center;
+}
+
+#modal-content > input,
+#modal-content > textarea {
+    grid-column: 3 / 7;
+}
+
+#modal-content > input,
+#modal-content > textarea,
+#modal-content > label,
+#modal-content > button {
+    font-size: clamp(16px, 1.6rem, 24px);
+}
+
+#modal-content > textarea {
+    resize: none;
+}
+
+#new-project-description {
+    text-justify: start;
+}
+
+#create-new-project-button {
+    grid-column: 2 / 4;
+}
+
+#cancel-new-project-button {
+    grid-column: 4 / 6;
+}
