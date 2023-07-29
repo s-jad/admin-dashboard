@@ -16,6 +16,7 @@ const cancelProjectBtn = document.getElementById('cancel-new-project-button');
 const createProjectModal = document.getElementById('create-project-modal');
 const modalContent = document.getElementById('modal-content');
 
+// Toggle sidebar collapse/expansion and minus <-> hamburger animation
 toggleSidebarBtn.addEventListener('click', function() {
     sidebar.classList.toggle('invisible');
     if (sidebar.classList.contains('invisible')) {
@@ -33,24 +34,29 @@ toggleSidebarBtn.addEventListener('click', function() {
 
 scrollingToggleSidebarBtn.addEventListener('click', function() {
     sidebar.classList.toggle('invisible');
+    // Ensure hamburger menu is visible to expand sidebar again
     toggleSidebar.style.left = "0.5%";
     toggleSidebarBtn.style.left = "0.5%";
     toggleSidebar.style.filter = "invert(0%)";
     hamburgerMenu.classList.remove('collapsed');
 });
 
+// Collapse and Expand the searchbar
 searchbarBtn.addEventListener('click', function() {
     searchbar.classList.toggle('inactive');
     searchbarBtn.classList.toggle('inactive');
 });
 
+// Switch between static animated toggleSidebar and pos: fixed scrollable toggleSidebar
 document.addEventListener('scroll', function() {
     if (document.documentElement.scrollTop === 0) {
         // Document is at the top of its vertical scroll
-        // Trigger your event here
+        // Make animated toggleSidebar button visible 
         toggleSidebar.classList.remove('disappear');
         scrollingToggleSidebar.classList.add('disappear');
     } else {
+        // User is scrolling down
+        // Make position: fixed scrollingToggleSidebar button visible 
         scrollingToggleSidebar.classList.remove('disappear');
         toggleSidebar.classList.add('disappear');
     }
