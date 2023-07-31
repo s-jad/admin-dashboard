@@ -105,12 +105,25 @@ createProjectBtn.addEventListener('click', function() {
         <p class="project-description">${projectDescription.value}</p>
         <div class="project-icons">
             <img class="card-icon" src="icons/plus_star.png" alt="">
-            <img class="card-icon" src="./icons/delete.png" alt="">
+            <img class="card-icon delete-project-button" src="./icons/delete.png" alt="">
             <img class="card-icon" src="./icons/share.png" alt="">
-        </div>
+        </img>
     `;
 
     projectGrid.appendChild(card);
+
+    // Add functionality to new delete project button
+    const newDeleteProjectButton = card.querySelector('.delete-project-button');
+
+    newDeleteProjectButton.addEventListener('click', function() {
+        deleteProjectModal.classList.add('active');
+        deleteProjectModalContent.classList.remove('fade');
+
+        // Assigns btn's grandparent div.card to projectToBeDeleted
+        projectToBeDeleted = newDeleteProjectButton.parentNode.parentNode;
+        projectToBeDeletedTitle = projectToBeDeleted.querySelector('.project-title');
+        deleteProjectModalTitle.innerText = `Are you sure you want to delete ${projectToBeDeletedTitle.innerText}?`;
+    });
 
     // Close the modal
     createProjectModal.classList.remove('active');
